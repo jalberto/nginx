@@ -1,5 +1,5 @@
 # Cookbook Name:: nginx
-# Recipe:: repo-passenger
+# Recipe:: repo_passenger
 # Author:: Jose Alberto Suarez Lopez <ja@josealberto.org>
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -25,6 +25,7 @@ when 'rhel', 'fedora'
 when 'debian'
   include_recipe 'apt::default'
   package 'apt-transport-https'
+  package 'ca-certificates'
 
   apt_repository 'phusionpassenger' do
     uri 'https://oss-binaries.phusionpassenger.com/apt/passenger'
